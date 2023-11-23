@@ -90,6 +90,7 @@ namespace IntroductionEFCore.DBLib.Models
             this.Pokemons = new List<Pokemon>();
             this.Name = name;
             this.Description  = description;
+            this.ElementPokemons = new List<ElementPokemon>();
 
         }
         #endregion

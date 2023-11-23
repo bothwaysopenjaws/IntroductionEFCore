@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroductionEFCore.App", "IntroductionEFCore.App\IntroductionEFCore.App.csproj", "{1AEFB3C8-783E-45E9-84DA-EB0F4C1479EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntroductionEFCore.App", "IntroductionEFCore.App\IntroductionEFCore.App.csproj", "{1AEFB3C8-783E-45E9-84DA-EB0F4C1479EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroductionEFCore.DBLib", "IntroductionEFCore.DBLib\IntroductionEFCore.DBLib.csproj", "{3A955E43-7D78-46F2-B1EB-829FF95AE03C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntroductionEFCore.DBLib", "IntroductionEFCore.DBLib\IntroductionEFCore.DBLib.csproj", "{3A955E43-7D78-46F2-B1EB-829FF95AE03C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroductionEFCore.Wpf", "IntroductionEFCore.Wpf\IntroductionEFCore.Wpf.csproj", "{4D052BC4-D05E-4ABE-86A8-8A81CE03B771}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3A955E43-7D78-46F2-B1EB-829FF95AE03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A955E43-7D78-46F2-B1EB-829FF95AE03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A955E43-7D78-46F2-B1EB-829FF95AE03C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D052BC4-D05E-4ABE-86A8-8A81CE03B771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D052BC4-D05E-4ABE-86A8-8A81CE03B771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D052BC4-D05E-4ABE-86A8-8A81CE03B771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D052BC4-D05E-4ABE-86A8-8A81CE03B771}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

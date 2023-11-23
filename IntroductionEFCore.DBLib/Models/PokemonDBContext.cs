@@ -11,7 +11,7 @@ namespace IntroductionEFCore.DBLib.Models
     /// <summary>
     /// Contexte de données de l'application
     /// </summary>
-    internal class PokemonDBContext : DbContext
+    public class PokemonDBContext : DbContext
     {
 
         #region Liste des DBSets
