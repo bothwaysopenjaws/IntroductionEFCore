@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:IntroductionEFCore.Wpf"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="./Styles/Styles.xaml" />
     </Application.Resources>
 </Application>

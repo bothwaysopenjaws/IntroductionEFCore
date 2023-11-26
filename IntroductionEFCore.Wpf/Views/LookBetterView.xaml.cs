@@ -21,15 +21,9 @@ namespace IntroductionEFCore.Wpf.Views
     /// </summary>
     public partial class LookBetterView : UserControl
     {
-        public List<string> Pokemons { get; set; }
 
         public LookBetterView()
         {
-            this.Pokemons = new List<string>();
-            this.Pokemons.Add("Tadmorv");
-            this.Pokemons.Add("Grotadmorv");
-            this.Pokemons.Add("Medugivre");
-
             InitializeComponent();
             //this.DataContext = this;
             this.DataContext = new LookBetterViewViewModel();
