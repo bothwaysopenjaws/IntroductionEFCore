@@ -30,5 +30,11 @@ namespace IntroductionEFCore.Wpf.Views
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e) =>((LookBetterViewViewModel)this.DataContext).AddPokemonSpecies();
+
+        private void DeleteSelectedObject_Click(object sender, RoutedEventArgs e)
+         => ((LookBetterViewViewModel)this.DataContext).DeletePokemonSpecies();
+
+        private void SaveSelectedObject_Click(object sender, RoutedEventArgs e)
+         => ((LookBetterViewViewModel)this.DataContext).SavePokemonSpecies();
     }
 }

@@ -25,7 +25,9 @@
                  SelectedItem="{Binding SelectedSpeciesPokemon}">
         </ListBox>
         <Button Grid.Column="0" Grid.Row="2" x:Name="AddButton" Content="Ajouter" Click="AddButton_Click" />
-        <GroupBox Header="Detail" Grid.Row="1" Grid.Column="1" >
+        <GroupBox Header="Detail" 
+                  Grid.Row="1" Grid.Column="1" 
+                  Visibility="{Binding SelectedSpeciesPokemon, Converter={StaticResource SharedObjectToVisibilityConverter}}" >
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -38,18 +40,23 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Label   Grid.Row="1" Grid.Column="0" Content="Nom : " Style="{StaticResource LabelMain}"/>
+                <Label   Grid.Row="1" Grid.Column="0" Content="Nom : " Style="{StaticResource LabelMain}" />
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedSpeciesPokemon.Name}" />
-                <Label Grid.Row="2" Grid.Column="1" Content="Description" Style="{StaticResource LabelMain}"></Label>
-                <RichTextBox>
+                
+                <Label Grid.Row="2" Grid.Column="0" Content="Description" Style="{StaticResource LabelMain}"></Label>
+                <RichTextBox Grid.Row="2" Grid.Column="1">
                     <FlowDocument>
                         <Paragraph>
                             <Run Text="{Binding SelectedSpeciesPokemon.Description}"/>
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>
+                
+                <Button Grid.Row="3" Grid.Column="0" x:Name="DeleteSelectedObject" Content="Supprimer" Click="DeleteSelectedObject_Click"/>
+                <Button Grid.Row="3" Grid.Column="1" x:Name="SaveSelectedObject" Content="Sauvegarder" Click="SaveSelectedObject_Click" />
             </Grid>
         </GroupBox>
     </Grid>

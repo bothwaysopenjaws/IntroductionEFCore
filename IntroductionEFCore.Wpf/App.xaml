@@ -2,8 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:IntroductionEFCore.Wpf"
+        xmlns:converters="clr-namespace:IntroductionEFCore.Wpf.Converters"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="./Styles/Styles.xaml" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converters:ObjectToVisibilityConverter x:Key="SharedObjectToVisibilityConverter"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

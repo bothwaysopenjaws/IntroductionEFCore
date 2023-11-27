@@ -90,6 +90,46 @@ class LookBetterViewViewModel : ObservableObject
     }
 
 
+    /// <summary>
+    /// Supprime une espèce
+    /// </summary>
+    internal void DeletePokemonSpecies()
+    {
+        using (PokemonDBContext context = new())
+        {
+            if (this.SelectedSpeciesPokemon is not null)
+            {
+                context.SpeciesPokemons.Remove(this.SelectedSpeciesPokemon);
+                this.SpeciesPokemons.Remove(this.SelectedSpeciesPokemon);
+                context.SaveChanges();
+            }
+
+            this.SelectedSpeciesPokemon = null;
+        }
+    }
+
+    /// <summary>
+    /// Supprime une espèce
+    /// </summary>
+    internal void SavePokemonSpecies()
+    {
+        using (PokemonDBContext context = new())
+        {
+            if (this.SelectedSpeciesPokemon is not null)
+            {
+                context.Update(this.SelectedSpeciesPokemon);
+                context.SaveChanges();
+            }
+            this.SelectedSpeciesPokemon = null;
+        }
+    }
+
+
+
+
+
+
+
 
     #endregion
 }
