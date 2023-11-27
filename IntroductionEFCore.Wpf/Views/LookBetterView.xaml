@@ -24,7 +24,7 @@
                  ItemsSource="{Binding SpeciesPokemons}" 
                  SelectedItem="{Binding SelectedSpeciesPokemon}">
         </ListBox>
-        <Button Grid.Column="0" Grid.Row="2" x:Name="AddButton" Content="Ajouter" Click="AddButton_Click" />
+        <Button Grid.Column="0" Grid.Row="2" x:Name="AddButton" Content="Ajouter" Command="{Binding CommandAddSpecies}" />
         <GroupBox Header="Detail" 
                   Grid.Row="1" Grid.Column="1" 
                   Visibility="{Binding SelectedSpeciesPokemon, Converter={StaticResource SharedObjectToVisibilityConverter}}" >

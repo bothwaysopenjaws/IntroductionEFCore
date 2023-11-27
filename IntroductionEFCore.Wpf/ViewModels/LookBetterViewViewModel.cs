@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IntroductionEFCore.DBLib.Models;
+using Prism.Commands;
 using WebAndSoft.Internal;
 
 namespace IntroductionEFCore.Wpf.ViewModels;
-
 
 /// <summary>
 /// Modèle Vue pour LookBetter
@@ -26,6 +26,11 @@ class LookBetterViewViewModel : ObservableObject
     /// Espèce sélectionnée
     /// </summary>
     private SpeciesPokemon? _SelectedSpeciesPokemon;
+
+    /// <summary>
+    /// Délégué pour l'ajout d'une espèce.
+    /// </summary>
+    private DelegateCommand<object> _CommandAddSpecies;
 
     #endregion
 
@@ -48,6 +53,15 @@ class LookBetterViewViewModel : ObservableObject
         get => _SelectedSpeciesPokemon; 
         set => SetProperty(nameof(SelectedSpeciesPokemon), ref _SelectedSpeciesPokemon, value);
     }
+    
+    /// <summary>
+    /// Obtient ou défini le délégué
+    /// </summary>
+    public DelegateCommand<object> CommandAddSpecies 
+    { 
+        get => _CommandAddSpecies; 
+        set => _CommandAddSpecies = value; 
+    }
 
     #endregion
 
@@ -55,9 +69,13 @@ class LookBetterViewViewModel : ObservableObject
 
     /// <summary>
     /// Constructeur
+    /// Instancie les commandes
     /// </summary>
     public LookBetterViewViewModel()
     {
+        CommandAddSpecies = new DelegateCommand<object>(AddSpeciesPokemon, CanAddSpeciesPokemon)
+            .ObservesProperty(() => SelectedSpeciesPokemon);
+
         using (PokemonDBContext context = new())
         {
             this.SpeciesPokemons = new ObservableCollection<SpeciesPokemon>(context.SpeciesPokemons);
@@ -66,13 +84,12 @@ class LookBetterViewViewModel : ObservableObject
 
     #endregion
 
-
     #region Methods
 
     /// <summary>
     /// Ajoute une nouvelle espèce
     /// </summary>
-    internal void AddPokemonSpecies()
+    internal void AddSpeciesPokemon(object parameter = null)
     {
         using (PokemonDBContext context = new())
         {
@@ -89,6 +106,12 @@ class LookBetterViewViewModel : ObservableObject
         }
     }
 
+    /// <summary>
+    /// Indique si on peut exécuter la commmande <see cref="AddSpeciesPokemon"/>
+    /// </summary>
+    /// <param name="parameter"></param>
+    /// <returns>Indique si c'est possible ou non</returns>
+    internal bool CanAddSpeciesPokemon(object parameter = null) => this.SelectedSpeciesPokemon == null;
 
     /// <summary>
     /// Supprime une espèce
