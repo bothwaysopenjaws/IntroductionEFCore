@@ -28,5 +28,7 @@ namespace IntroductionEFCore.Wpf.Views
             //this.DataContext = this;
             this.DataContext = new LookBetterViewViewModel();
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e) =>((LookBetterViewViewModel)this.DataContext).AddPokemonSpecies();
     }
 }

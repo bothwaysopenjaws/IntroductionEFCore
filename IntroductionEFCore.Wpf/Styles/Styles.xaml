@@ -3,6 +3,7 @@
     <Style x:Key="LabelMain" TargetType="Label">
         <Style.Setters>
             <Setter Property="Margin" Value="2"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
         </Style.Setters>
     </Style>
 

@@ -12,7 +12,6 @@
             <ColumnDefinition Width="100" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-
         <StackPanel Grid.Column="0">
             <Button x:Name="ButtonTestView" Content="TEST" Click="ButtonTestView_Click" />
             <Button x:Name="ButtonLookBetterView" Content="C'est mieux" Click="ButtonLookBetterView_Click" />

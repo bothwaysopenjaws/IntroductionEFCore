@@ -14,6 +14,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
@@ -23,6 +24,7 @@
                  ItemsSource="{Binding SpeciesPokemons}" 
                  SelectedItem="{Binding SelectedSpeciesPokemon}">
         </ListBox>
+        <Button Grid.Column="0" Grid.Row="2" x:Name="AddButton" Content="Ajouter" Click="AddButton_Click" />
         <GroupBox Header="Detail" Grid.Row="1" Grid.Column="1" >
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -35,12 +37,20 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Label   Grid.Row="1" Grid.Column="0" Content="Nom : " HorizontalAlignment="Right"></Label>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedSpeciesPokemon.Name}" ></TextBox>
+                <Label   Grid.Row="1" Grid.Column="0" Content="Nom : " Style="{StaticResource LabelMain}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedSpeciesPokemon.Name}" />
+                <Label Grid.Row="2" Grid.Column="1" Content="Description" Style="{StaticResource LabelMain}"></Label>
+                <RichTextBox>
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run Text="{Binding SelectedSpeciesPokemon.Description}"/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
             </Grid>
         </GroupBox>
-        
     </Grid>
 </UserControl>
